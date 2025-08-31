@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Claraa 💖</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        text-align: center;
+        overflow: hidden;
+      }
+      .card {
+        background: #fff;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        max-width: 400px;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeSlide 1.5s ease forwards;
+      }
+      h1 {
+        font-size: 26px;
+        margin: 10px 0;
+        animation: breathe 3s ease-in-out infinite;
+      }
+      p {
+        font-size: 18px;
+        margin: 12px 0;
+        line-height: 1.5;
+      }
+      @keyframes fadeSlide {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes breathe {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      iframe {
+        border-radius: 12px;
+        margin-top: 15px;
+      }
+      /* Animasi hati jatuh */
+      .heart {
+        position: fixed;
+        top: -20px;
+        font-size: 20px;
+        animation: fall linear infinite;
+        color: #ff4d6d;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>For My Claraa &lt;3</h1>
+      <p>
+        “Even on your worst days, you’re still my favorite person. If sadness
+        comes, lean on me. We’re a strong team, okay? 💖”
+      </p>
+
+      <!-- Spotify Embed -->
+      <iframe
+        style="border-radius: 12px"
+        src="https://open.spotify.com/embed/track/3l1grOhgJQG4E1E2MjfHWG?utm_source=generator"
+        width="100%"
+        height="80"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <script>
+      // Bikin hati jatuh random
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+
+      setInterval(createHeart, 600);
+    </script>
+  </body>
+</html>
